@@ -34,7 +34,8 @@ resource "aws_security_group" "this" {
   }
 
   tags = {
-    Name = "${each.key}-${random_id.this.hex}"
+    Name      = each.key
+    Workspace = terraform.workspace
   }
 
   lifecycle {
