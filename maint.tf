@@ -9,7 +9,7 @@ resource "random_id" "this" {
 resource "aws_security_group" "this" {
   for_each = { for rule in var.sg_rules : rule.name => rule }
 
-  name        = "${each.key}-sg-${random_id.this.hex}"
+  name        = "${each.key}-${random_id.this.hex}"
   description = "Security group for ${each.key}"
   vpc_id      = var.vpc_id
 

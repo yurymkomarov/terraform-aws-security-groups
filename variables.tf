@@ -23,7 +23,7 @@ variable "sg_rules" {
   description = "List of security groups rules."
 
   default = [{
-    name = "sg-allow-all"
+    name = "terraform-aws-sg"
     ingress = [{
       from_port   = 0
       to_port     = 0
