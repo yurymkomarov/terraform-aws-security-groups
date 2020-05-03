@@ -35,6 +35,7 @@ resource "aws_security_group" "this" {
 
   tags = {
     Name      = each.key
+    Module    = path.module
     Workspace = terraform.workspace
   }
 
